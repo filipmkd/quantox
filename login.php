@@ -1,19 +1,5 @@
 <?php
-    try {
-        $conn = new PDO("mysql:host=localhost;dbname=test", 'root', '');
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-      } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-      }
-
-      $name = $_POST['name'];
-      $email = $_POST['email'];
-      $password = $post['password'];
-      $service = $_POST['selection'];
-      
-      $sql = "INSERT INTO test(name, email, password, selection) VALUES('$name','$email', '$password', '$selection')";
-      $conn->exec($sql);
+    
 ?>
 
 <!DOCTYPE html>
