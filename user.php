@@ -1,11 +1,13 @@
 <?php
 
+    namespace web;
+
     class User
     {
-        public $name;
-        public $email;
-        public $password;
-        public $selection;
+        protected $name;
+        protected $email;
+        protected $password;
+        protected $selection;
 
         public function __constructor($name, $email, $password, $selection)
         {
