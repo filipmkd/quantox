@@ -1,28 +1,24 @@
 <?php
-    
-    namespace Website;
+
+    namespace web;
 
     class Validate
     {
-        public function pushToDatabase($obj)
-        {
-            try 
-            {
-                $conn = new PDO("mysql:host=localhost;dbname=test", 'root', '');
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-            } 
-            catch(PDOException $e)
-            {
-                echo "Connection failed: " . $e->getMessage();
-            }
-        }
-
         public function validate($obj)
         {
-            if($name == '')
+            if($this->name == '')
             {
                 echo "Name field cannot be empty";
+                die();
+            }
+            if($this->email == '')
+            {
+                echo "Email field cannot be empty";
+                die();
+            }
+            if($this->password == '')
+            {
+                echo "Password field cannot be empty";
                 die();
             }
         }
