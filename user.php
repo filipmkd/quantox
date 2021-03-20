@@ -7,9 +7,8 @@
         protected $name;
         protected $email;
         protected $password;
-        protected $selection;
 
-        public function __constructor($name, $email, $password, $selection)
+        public function __constructor($name, $email, $password)
         {
             $this->setName($name);
             $this->setEmail($email);

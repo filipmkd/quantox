@@ -4,22 +4,27 @@
 
     class Validate
     {
-        public function validate($obj)
+        public function validate($name, $email, $password)
         {
-            if($this->name == '')
+            if($_POST['name'] == '')
             {
                 echo "Name field cannot be empty";
-                die();
+                return -1;
             }
-            if($this->email == '')
+            if($_POST['email'] == '')
             {
                 echo "Email field cannot be empty";
-                die();
+                return -1;
             }
-            if($this->password == '')
+            if($_POST['password'] == '')
             {
                 echo "Password field cannot be empty";
-                die();
+                return -1;
+            }
+            if($_POST['repeatpassword'] == '')
+            {
+                echo "Repeated password field cannot be empty";
+                return -1;  
             }
         }
     }

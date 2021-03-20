@@ -1,21 +1,50 @@
 <?php
 
-    require_once 'user.php';
-    //require_once 'validate.php';
+    //require_once 'user.php';
+    require_once 'validate.php';
     require_once 'db.php';
 
-    use \web\User;
-    //use \Website\Validate;
+    //use \web\User;
+    use \web\Validate;
 
     if(isset($_POST['register']))
     {
-
-        $user = new User($_POST['name'], $_POST['email'], $_POST['password'], $_POST['selection']);
-
-        print_r($user);
-
-        $db = new DB();
-        $db->saveToDatabase($user);
+        /*if($_POST['name'] == '')
+        {
+            echo "Name field cannot be empty";
+            die();
+        }
+        if($_POST['email'] == '')
+        {
+            echo "Email field cannot be empty";
+            die();
+        }
+        if($_POST['password'] == '')
+        {
+            echo "Password field cannot be empty";
+            die();
+        }
+        if($_POST['repeatpassword'] == '')
+        {
+            echo "Repeated password field cannot be empty";
+            die();   
+        }
+        else
+        {
+            $user = new User($_POST['name'], $_POST['email'], $_POST['password']);
+            $db = new DB();
+            $db->saveToDatabase();
+        }*/
+        $user = new Validate();
+        if($user->validate($_POST['name'], $_POST['email'], $_POST['password']))
+        {
+            $db = new DB();
+            $db->saveToDatabase($_POST['name'], $_POST['email'], $_POST['password']);
+        }
+        else
+        {
+            die();
+        }
     }
 ?>
 
