@@ -15,10 +15,10 @@
                 echo "Connection failed: " . $e->getMessage();
             }
 
-            $name = $obj->name;
-            $email = $obj->email;
-            $password = md5($obj->password);
-            $selection = $obj->selection;
+            $name = $this->name;
+            $email = $this->email;
+            $password = md5($this->password);
+            $selection = $this->selection;
     
             $sql = "INSERT INTO test(name, email, password, selection) VALUES('$name','$email', '$password', '$selection')";
             $conn->exec($sql);
