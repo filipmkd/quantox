@@ -4,7 +4,7 @@
     //require_once 'validate.php';
     require_once 'db.php';
 
-    //use \Website\User;
+    use \web\User;
     //use \Website\Validate;
 
     if(isset($_POST['register']))
