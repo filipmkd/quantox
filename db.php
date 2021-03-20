@@ -1,10 +1,9 @@
 <?php
 
-    class DB extends User
+    class DB extends \web\User
     {
         public function saveToDatabase($obj)
         {
-            print_r($obj);
             try 
             {
                 $conn = new PDO("mysql:host=localhost;dbname=test", 'root', '');
